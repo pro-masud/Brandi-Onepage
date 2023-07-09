@@ -1,0 +1,197 @@
+/**
+ * ===============================================
+ * For Smaill Desktop
+ * =============================================== 
+ * */
+
+ @media (main-width: 980px) and (max-widht: 1150px) {
+  /* slider */
+  .carousel-caption h3{
+      font-size: 45px;
+  }
+
+
+  /* Our Team */
+  .member-thumb {
+    width: auto;
+  }
+ }
+
+
+
+
+
+ /* ==============================================
+  Tablet ( Portrait ) Design for a width of 768
+ =================================================*/
+ @media (min-width: 768px) and (max-width: 979px) {
+ 
+  .carousel-caption h2 {
+      font-size: 55px;
+  }
+    
+  .carousel-caption h3 {
+    font-size: 36px;
+  }
+
+
+
+  /* words items  */
+
+  .work-item{
+    width:33.33%;
+  }
+
+
+
+  /* teams */
+
+  .member-thum .overlay h5{
+    margin: 25px 0;
+  }
+
+  .member-thumb{
+    margin: 0 auto;
+  }
+
+  /* some fun facts */
+  #facts{
+    background-position:  center top !important;
+  }
+
+  .counters-item{
+    margin-bottom: 30px;
+  }
+
+  .counters-item i{
+    margin: 0 0 15px;
+  }
+
+  .counters-item strong{
+    font-size: 45px;
+  }
+}
+
+
+/* ==============================================
+  Mobile ( Portrait ) Design for a width of 768px
+ =================================================*/
+
+ @media only screen and (max-width: 767px) {
+  .sec-sub-title p {
+      font-size: 14px;
+  }
+    
+    /* slider */
+
+  .carousel-caption h2 {
+      font-size: 35px;
+  }
+    
+  .carousel-caption h3 {
+      font-size: 22px;
+  }
+    
+  .carousel-caption p {
+      font-size: 14px;
+  }
+    
+  .social-links {
+      margin-top: 20%;
+  }
+
+
+  /* Services  */
+
+  .service-item {
+    margin: 0 auto 30px;
+    text-align: center;
+    width: 280px;
+  }
+
+  .service-icon {
+    float: none;
+    margin: 0 auto 15px;
+    text-align: center;
+    width: 50px;
+  }
+
+  .service-desc {
+    margin-left: 0;
+    position: relative;
+    top: 0;
+  }
+
+
+  /* work items */
+  .work-item{
+    left: 7%;
+    width: 85%;
+  }
+
+
+
+
+  /* team */
+
+  .team-member{
+    margin-bottom:30px;
+  }
+
+  .team-member:last-child{
+    margin-bottom: 0px;
+  }
+
+  .member-thumb{
+    width: 274px;
+    margin: 0 auto;
+  }
+
+
+  /* some fun facts */
+  .counters-item{
+    margin-bottom: 30px;
+  }
+
+}
+
+
+
+
+
+/* ==============================================
+  Mobile ( Portrait ) Design for a width of 480px
+ =================================================*/
+ @media only screen and (min-width: 480px) and (max-width: 767px) {
+
+ 
+  /* service items */
+  .service-item {
+    margin: 0 auto 30px;
+    text-align: center;
+    width: 325px;
+  }
+  
+  .service-icon {
+    float: none;
+    margin: 0 auto 15px;
+    text-align: center;
+    width: 50px;
+  }
+  
+  .service-desc {
+    margin-left: 0;
+    position: relative;
+    top: 0;
+  }
+
+  /* works */
+  .work-item {
+   left: inherit;
+   width: 50%;
+  }
+
+
+
+
+ }
