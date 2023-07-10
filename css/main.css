@@ -472,7 +472,7 @@ body > section, .footer{
     -moz-transform: rotateY(0px) scale(1,1);
     -ms-transform: rotateY(0deg) scale(1,1);
     -o-transform: rotateY(0deg) scale(1,1);
-    transform: rotateY(0deg) sca;e(1,1);
+    transform: rotateY(0deg) scale(1,1);
 }
 
 .team-member .social-links{
