@@ -533,8 +533,50 @@
                     </p>
                 </div>
             </div>
+            <!-- end contact address -->
+
+            <!-- contact form -->
+            <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="300ms">
+                <div class="contact-form">
+                    <h3>Say Hello!</h3>
+                    <form action="#" id="contact-form">
+                        <div class="input-group name-email">
+                            <div class="input-field">
+                                <input type="text" id="name" name="name" placeholder="Name" class="form-control">
+                            </div>
+                            <div class="input-field">
+                                <input type="email" name="email" id="email" placeholder="Email" class="form-control">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <textarea name="message" id="message" placeholder="Message" class="form-control"></textarea>
+                        </div>
+                        <div class="input-group">
+                            <input type="submit" id="form-submit" class="pull-right" value="Send message">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- end contact form -->
+
+            <!-- footer social links -->
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 wow fadeInRight animated" data-wow-duration="500ms" data-wow-delay="600ms">
+                <ul class="footer-social">
+                    <li><a href="#"><i class="fa-brands fa-behance"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-dribbble"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </div>
+            <!-- end footer social links -->
         </div>
     </div>
+
+    
+    <!-- Google Map -->
+    <div class="wow bounceInDown animated" data-wow-duration="500ms" id="map_canvas"></div>
+    <!-- End Google Map -->
+
 </section>
 
 
@@ -545,24 +587,75 @@
 ========================================= -->
 
 
+<!-- 
+   footer 
+========================================= -->
+
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms">
+                <div class="footer-single">
+                    <img src="./img/footer-logo.png" alt="footer-logo">
+                    <p class="about-us">eusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+               <div class="footer-single">
+                <h6>Subscribe</h6>
+                <form action="#" class="subscribe">
+                    <input type="text" name="subscribe" id="subscribe">
+                    <input type="submit" value="&#8594;" id="subs">
+                </form>
+                <p>eusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+               </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
+                <div class="footer-single">
+                    <h6>Explore</h6>
+                    <ul>
+                        <li><a href="#">Inside Us</a></li>
+                        <li><a href="#">Flickr</a></li>
+                        <li><a href="#">Google</a></li>
+                        <li><a href="#">Forum</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
+                <div class="footer-single">
+                    <h6>Support</h6>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Market Blog</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Pressroom</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="copyright text-center">
+                    Copyright © 2015 <a href="http://themefisher.com/">Themefisher</a>. All rights reserved. Designed & developed by <a href="http://themefisher.com/">Themefisher</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- 
+   End footer
+========================================= -->
 
 
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- back to top hear now -->
+<a href="javascript:void(0);" id="back-top"><i class="fa-solid fa-angle-up"></i></a>
 
 
 <!--1 Essential Jquery Plugins
@@ -605,9 +698,67 @@
 
  </script>
 
-
- <!-- custom Functions -->
+<!-- custom Functions -->
  <script src="./js/custom.js"></script>
+
+
+<script type="text/javascript">
+    $(function(){
+        /*==========================================*/
+        /*   Contact Form                           */
+        /*==========================================*/
+
+        $('#contact-form').validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                message: {
+                    required: true
+                }
+            },
+            messages: {
+                name: {
+                    required: "come on, you have a name don't you?",
+                    minlength: "your name mush consist of at least 2 characters"
+                },
+                email: {
+                    required: "no email, no message"
+                },
+                message: {
+                    required: "um...yea, you have to write something to sent this form.",
+                    minlength: "thats all? really?"
+                }
+            },
+            submitHandler: function(form){
+                $(form).ajaxSubmit({
+                    type: "POST",
+                    data: $(form).serialize(),
+                    url: "process.php",
+                    success: function(){
+                        $('#contact-form :input').attr('disabled', 'disabled');
+                        $('#contact-form').fadeTo("show", 0.15, function(){
+                            $(this).find(':input').attr('disabled','disabled');
+                            $(this).find('label').css('cursor', 'default');
+                            $('#success').fadeIn();
+                        });
+                    },
+                    error: function(){
+                        $('#contact-form').fadeTo("slow", 0.15, function(){
+                            $('#error').fadeIn();
+                        });
+                    }
+
+                });
+            }
+        });
+    });
+</script>
 
 
 
