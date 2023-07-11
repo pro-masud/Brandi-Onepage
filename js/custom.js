@@ -2,9 +2,11 @@
 /*	Preloader
 /* ========================================================================= */
 
-    jQuery(window).load( function (){
-        $("#preloader").fadeOut("slow");
-    });
+jQuery(window).load(function () {
+
+    $("#preloader").fadeOut("slow");
+
+});
 
 
 
@@ -162,7 +164,7 @@ function initialize(){
         scaleControl: false,
         draggable: false,
         mapTyeControlOptions: {
-            mapTypeIds: [ gooogle.maps.MapTypeId.ROADMAP, 'roadatlas']
+            mapTypeIds: [ google.maps.MapTypeId.ROADMAP, 'roadatlas']
         }
     };
 
